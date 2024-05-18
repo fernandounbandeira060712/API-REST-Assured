@@ -1,0 +1,23 @@
+name: Merge development to main
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  merge_to_main:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Merge development into main
+        run: |
+          git checkout main
+          git pull origin main
+          git merge development --no-edit
+          git push origin main
+
+
