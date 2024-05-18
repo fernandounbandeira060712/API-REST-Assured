@@ -1,4 +1,4 @@
-name: Merge development to main
+name: Merge development to master
 
 on:
   push:
@@ -15,9 +15,9 @@ jobs:
 
       - name: Merge development into main
         run: |
-          git checkout main
-          git pull origin main
+          git checkout master
+          git pull origin master
           git merge development --no-edit
-          git push origin main
+          git push origin master
 
 
