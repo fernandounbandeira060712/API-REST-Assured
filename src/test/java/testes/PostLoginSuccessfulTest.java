@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import static enums.EndPointEnum.ENDPOINT_POST_LOGIN;
 import static enums.EndPointEnum.ENDPOINT_POST_REGISTER;
-import static enums.UsuarioEnum.USUARIO_VALIDO_POST_LOGIN_SUCCESSFUK;
+import static enums.UsuarioEnum.USUARIO_VALIDO_POST_LOGIN_SUCCESSFUL;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.testng.AssertJUnit.assertEquals;
@@ -19,7 +19,7 @@ public class PostLoginSuccessfulTest extends BaseTest {
     @Test(groups = {"regressivo"})
     public void validarStatusCode200EResponseBody() {
         JsonNode responseAtual = postComLoginNoBody(ENDPOINT_POST_LOGIN.getEndPoint(),
-                requestBodyEmailPasssword(USUARIO_VALIDO_POST_LOGIN_SUCCESSFUK.getEmail(), USUARIO_VALIDO_POST_LOGIN_SUCCESSFUK.getPassword()))
+                requestBodyEmailPasssword(USUARIO_VALIDO_POST_LOGIN_SUCCESSFUL.getEmail(), USUARIO_VALIDO_POST_LOGIN_SUCCESSFUL.getPassword()))
                 .statusCode(SC_OK)
                 .extract().response().as(JsonNode.class);
 
@@ -29,13 +29,8 @@ public class PostLoginSuccessfulTest extends BaseTest {
     }
 
     @Test(groups = {"contrato"})
-    public void validarCorpoObrigatorioNoRequestBody() {
-        validarCorpoObrigatorio(USUARIO_VALIDO_POST_LOGIN_SUCCESSFUK.getEmail(), USUARIO_VALIDO_POST_LOGIN_SUCCESSFUK.getPassword());
-    }
-
-    @Test(groups = {"contrato"})
-    public void validarSchemaPostProductsAddTest() {
-        postComLoginNoBody(ENDPOINT_POST_REGISTER.getEndPoint(), requestBodyEmailPasssword(USUARIO_VALIDO_POST_LOGIN_SUCCESSFUK.getEmail(), USUARIO_VALIDO_POST_LOGIN_SUCCESSFUK.getPassword()))
+    public void validarSchema() {
+        postComLoginNoBody(ENDPOINT_POST_REGISTER.getEndPoint(), requestBodyEmailPasssword(USUARIO_VALIDO_POST_LOGIN_SUCCESSFUL.getEmail(), USUARIO_VALIDO_POST_LOGIN_SUCCESSFUL.getPassword()))
                 .body(matchesJsonSchemaInClasspath("arquivos/schemas/PostRegisterSuccessfulSchema.json"));
     }
 

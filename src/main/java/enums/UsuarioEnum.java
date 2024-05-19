@@ -6,13 +6,23 @@ public enum UsuarioEnum {
     
     USUARIO_VALIDO_UPDATE("morpheus", "zion resident", null, null),
 
-    USUARIO_VALIDO_POST_REGISTER_SUCCESSFUK(null, null, "eve.holt@reqres.in", "pistol"),
+    USUARIO_VALIDO_POST_REGISTER_SUCCESSFUL(null, null, "eve.holt@reqres.in", "pistol"),
 
-    USUARIO_VALIDO_POST_REGISTER_UNSUCCESSFUK (null, null, "eve.holt@reqres.in", null),
+    USUARIO_VALIDO_POST_REGISTER_UNSUCCESSFUL (null, null, "eve.holt@reqres.in", null),
 
-    USUARIO_VALIDO_POST_LOGIN_SUCCESSFUK(null, null, "eve.holt@reqres.in", "cityslicka"),
+    USUARIO_VALIDO_POST_LOGIN_SUCCESSFUL(null, null, "eve.holt@reqres.in", "cityslicka"),
 
-    USUARIO_VALIDO_POST_LOGIN_UNSUCCESSFUK (null, null, "peter@klaven", null),;
+    USUARIO_VALIDO_POST_LOGIN_UNSUCCESSFUL_PASSWORD_NULL (null, null, "peter@klaven", null),
+
+    USUARIO_VALIDO_POST_LOGIN_UNSUCCESSFUL_EMAIL_NULL (null, null, null, "cityslicka"),
+
+    USUARIO_VALIDO_POST_LOGIN_UNSUCCESSFUL_NULL (null, null, null, null),
+
+    USUARIO_VALIDO_POST_LOGIN_UNSUCCESSFUL_PASSWORD_EMPTY (null, null, "peter@klaven", ""),
+
+    USUARIO_VALIDO_POST_LOGIN_UNSUCCESSFUL_EMAIL_EMPTY (null, null, "", "cityslicka"),
+
+    USUARIO_VALIDO_POST_LOGIN_UNSUCCESSFUK_EMPTY (null, null, "", "");
 
 
 

@@ -20,15 +20,15 @@ public class GetListUsersTest extends BaseTest {
 				.extract()
 				.response().body().as(JsonNode.class);
 
-		JsonNode responseEsperado = converterJsonParaJsonNode("src/test/resources/arquivos/responses/ListUsers.json");
+		JsonNode responseEsperado = converterJsonParaJsonNode("src/test/resources/arquivos/responses/GetListUsers.json");
 
 		assertEquals(responseAtual, responseEsperado);
 	}
 
 
 	@Test(groups = {"contrato"})
-	public void validarSchemaGetTest() {
+	public void validarSchema() {
 		getSemAutenticacao(ENDPOINT_GET_LIST_USERS.getEndPoint())
-				.body(matchesJsonSchemaInClasspath("arquivos/schemas/ListUsersSchema.json"));
+				.body(matchesJsonSchemaInClasspath("arquivos/schemas/GetListUsersSchema.json"));
 	}
 }

@@ -26,7 +26,7 @@ public class GetDelayedResponseTest extends BaseTest {
 	}
 
 	@Test(groups = {"contrato"})
-	public void validarSchemaGetTest() {
+	public void validarSchema() {
 		getSemAutenticacao(ENDPOINT_GET_DELAYED_RESPONSE.getEndPoint())
 				.body(matchesJsonSchemaInClasspath("arquivos/schemas/GetDelayedResponseSchema.json"));
 	}

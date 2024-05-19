@@ -43,7 +43,6 @@ public class Services {
                 .patch(endPoint)
                 .then();
 
-
     }
 
 }

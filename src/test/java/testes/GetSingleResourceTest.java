@@ -20,15 +20,15 @@ public class GetSingleResourceTest extends BaseTest {
 				.extract()
 				.response().body().as(JsonNode.class);
 
-		JsonNode responseEsperado = converterJsonParaJsonNode("src/test/resources/arquivos/responses/SingleResource.json");
+		JsonNode responseEsperado = converterJsonParaJsonNode("src/test/resources/arquivos/responses/GetSingleResource.json");
 
 		assertEquals(responseAtual, responseEsperado);
 	}
 
 
 	@Test(groups = {"contrato"})
-	public void validarSchemaGetTest() {
+	public void validarSchema() {
 		getSemAutenticacao(ENDPOINT_GET_SINGLE_RESOURCE.getEndPoint())
-				.body(matchesJsonSchemaInClasspath("arquivos/schemas/SingleResourceSchema.json"));
+				.body(matchesJsonSchemaInClasspath("arquivos/schemas/GetSingleResourceSchema.json"));
 	}
 }

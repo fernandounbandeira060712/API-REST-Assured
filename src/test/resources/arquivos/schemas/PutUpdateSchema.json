@@ -2,12 +2,20 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "properties": {
-        "token": {
+        "name": {
+            "type": "string"
+        },
+        "job": {
+            "type": "string"
+        },
+        "updatedAt": {
             "type": "string"
         }
     },
     "additionalProperties": false,
     "required": [
-        "token"
+        "name",
+        "job",
+        "updatedAt"
     ]
 }
