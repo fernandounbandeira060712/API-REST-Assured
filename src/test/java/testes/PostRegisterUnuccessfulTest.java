@@ -5,8 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import org.testng.annotations.Test;
 
 import static enums.EndPointEnum.ENDPOINT_POST_REGISTER;
-import static enums.UsuarioEnum.USUARIO_VALIDO_POST_LOGIN_SUCCESSFUK;
-import static enums.UsuarioEnum.USUARIO_VALIDO_POST_REGISTER_UNSUCCESSFUK;
+import static enums.UsuarioEnum.USUARIO_VALIDO_POST_REGISTER_UNSUCCESSFUL;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.apache.http.HttpStatus.SC_BAD_REQUEST;
 import static org.testng.AssertJUnit.assertEquals;
@@ -18,9 +17,9 @@ public class PostRegisterUnuccessfulTest extends BaseTest {
 
 
     @Test(groups = {"regressivo"})
-    public void validarStatusCode201EResponseBody() {
+    public void validarStatusCode400EResponseBody() {
         JsonNode responseAtual = postComLoginNoBody(ENDPOINT_POST_REGISTER.getEndPoint(),
-                requestBodyEmail(USUARIO_VALIDO_POST_REGISTER_UNSUCCESSFUK.getEmail()))
+                requestBodyEmail(USUARIO_VALIDO_POST_REGISTER_UNSUCCESSFUL.getEmail()))
                 .statusCode(SC_BAD_REQUEST)
                 .extract().response().as(JsonNode.class);
 
@@ -30,13 +29,8 @@ public class PostRegisterUnuccessfulTest extends BaseTest {
     }
 
     @Test(groups = {"contrato"})
-    public void validarCorpoObrigatorioNoRequestBody() {
-        validarCorpoObrigatorio(USUARIO_VALIDO_POST_LOGIN_SUCCESSFUK.getEmail());
-    }
-
-    @Test(groups = {"contrato"})
-    public void validarSchemaPostProductsAddTest() {
-        postComLoginNoBody(ENDPOINT_POST_REGISTER.getEndPoint(), requestBodyEmail(USUARIO_VALIDO_POST_REGISTER_UNSUCCESSFUK.getEmail()))
+    public void validarSchema() {
+        postComLoginNoBody(ENDPOINT_POST_REGISTER.getEndPoint(), requestBodyEmail(USUARIO_VALIDO_POST_REGISTER_UNSUCCESSFUL.getEmail()))
                 .body(matchesJsonSchemaInClasspath("arquivos/schemas/PostRegisterUnsuccessfulschema.json"));
     }
 

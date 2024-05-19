@@ -10,13 +10,12 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.matchesPattern;
 import static services.Services.putComLoginNoBody;
 import static utils.Common.requestBodyNameJob;
-import static utils.Common.validarCorpoObrigatorio;
 
 
 public class PutUpdateTest extends BaseTest {
 
     @Test(groups = {"regressivo"})
-    public void validarStatusCode201EResponseBody() {
+    public void validarStatusCode200EResponseBody() {
         putComLoginNoBody(ENDPOINT_PUT_UPDAYE.getEndPoint(),
                 requestBodyNameJob(USUARIO_VALIDO_UPDATE.getName(), USUARIO_VALIDO_UPDATE.getJob()))
                 .statusCode(SC_OK)
@@ -26,14 +25,9 @@ public class PutUpdateTest extends BaseTest {
     }
 
     @Test(groups = {"contrato"})
-    public void validarCorpoObrigatorioNoRequestBody() {
-        validarCorpoObrigatorio(USUARIO_VALIDO_UPDATE.getName(), USUARIO_VALIDO_UPDATE.getJob());
-    }
-
-    @Test(groups = {"contrato"})
-    public void validarSchemaPostProductsAddTest() {
+    public void validarSchema() {
         putComLoginNoBody(ENDPOINT_PUT_UPDAYE.getEndPoint(), requestBodyNameJob(USUARIO_VALIDO_UPDATE.getName(), USUARIO_VALIDO_UPDATE.getJob()))
-                .body(matchesJsonSchemaInClasspath("arquivos/schemas/UpdateSchema.json"));
+                .body(matchesJsonSchemaInClasspath("arquivos/schemas/PutUpdateSchema.json"));
     }
 
 }

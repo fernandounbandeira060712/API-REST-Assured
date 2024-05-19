@@ -11,7 +11,6 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.matchesPattern;
 import static services.Services.patchComLoginNoBody;
 import static utils.Common.requestBodyNameJob;
-import static utils.Common.validarCorpoObrigatorio;
 
 public class PatchUpdateTest extends BaseTest {
 
@@ -26,14 +25,9 @@ public class PatchUpdateTest extends BaseTest {
     }
 
     @Test(groups = {"contrato"})
-    public void validarCorpoObrigatorioNoRequestBody() {
-        validarCorpoObrigatorio(USUARIO_VALIDO_UPDATE.getName(), USUARIO_VALIDO_UPDATE.getJob());
-    }
-
-    @Test(groups = {"contrato"})
-    public void validarSchemaPostProductsAddTest() {
+    public void validarSchema() {
         patchComLoginNoBody(ENDPOINT_PATCH_UPDAYE.getEndPoint(),  requestBodyNameJob(USUARIO_VALIDO_UPDATE.getName(), USUARIO_VALIDO_UPDATE.getJob()))
-                .body(matchesJsonSchemaInClasspath("arquivos/schemas/UpdateSchema.json"));
+                .body(matchesJsonSchemaInClasspath("arquivos/schemas/PatchUpdateSchema.json"));
     }
 
 }

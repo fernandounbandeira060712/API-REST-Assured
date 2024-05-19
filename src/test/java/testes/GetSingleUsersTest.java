@@ -27,8 +27,8 @@ public class GetSingleUsersTest extends BaseTest {
 
 
 	@Test(groups = {"contrato"})
-	public void validarSchemaGetTest() {
+	public void validarSchema() {
 		getSemAutenticacao(ENDPOINT_GET_SINGLE_USER.getEndPoint())
-				.body(matchesJsonSchemaInClasspath("arquivos/schemas/SingleUsersSchema.json"));
+				.body(matchesJsonSchemaInClasspath("arquivos/schemas/GetSingleUsersSchema.json"));
 	}
 }

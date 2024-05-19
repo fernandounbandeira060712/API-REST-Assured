@@ -23,26 +23,26 @@
                         "id": {
                             "type": "integer"
                         },
-                        "email": {
+                        "name": {
                             "type": "string"
                         },
-                        "first_name": {
+                        "year": {
+                            "type": "integer"
+                        },
+                        "color": {
                             "type": "string"
                         },
-                        "last_name": {
-                            "type": "string"
-                        },
-                        "avatar": {
+                        "pantone_value": {
                             "type": "string"
                         }
                     },
                     "additionalProperties": false,
                     "required": [
                         "id",
-                        "email",
-                        "first_name",
-                        "last_name",
-                        "avatar"
+                        "name",
+                        "year",
+                        "color",
+                        "pantone_value"
                     ]
                 },
                 {
@@ -51,26 +51,26 @@
                         "id": {
                             "type": "integer"
                         },
-                        "email": {
+                        "name": {
                             "type": "string"
                         },
-                        "first_name": {
+                        "year": {
+                            "type": "integer"
+                        },
+                        "color": {
                             "type": "string"
                         },
-                        "last_name": {
-                            "type": "string"
-                        },
-                        "avatar": {
+                        "pantone_value": {
                             "type": "string"
                         }
                     },
                     "additionalProperties": false,
                     "required": [
                         "id",
-                        "email",
-                        "first_name",
-                        "last_name",
-                        "avatar"
+                        "name",
+                        "year",
+                        "color",
+                        "pantone_value"
                     ]
                 },
                 {
@@ -79,26 +79,26 @@
                         "id": {
                             "type": "integer"
                         },
-                        "email": {
+                        "name": {
                             "type": "string"
                         },
-                        "first_name": {
+                        "year": {
+                            "type": "integer"
+                        },
+                        "color": {
                             "type": "string"
                         },
-                        "last_name": {
-                            "type": "string"
-                        },
-                        "avatar": {
+                        "pantone_value": {
                             "type": "string"
                         }
                     },
                     "additionalProperties": false,
                     "required": [
                         "id",
-                        "email",
-                        "first_name",
-                        "last_name",
-                        "avatar"
+                        "name",
+                        "year",
+                        "color",
+                        "pantone_value"
                     ]
                 },
                 {
@@ -107,26 +107,26 @@
                         "id": {
                             "type": "integer"
                         },
-                        "email": {
+                        "name": {
                             "type": "string"
                         },
-                        "first_name": {
+                        "year": {
+                            "type": "integer"
+                        },
+                        "color": {
                             "type": "string"
                         },
-                        "last_name": {
-                            "type": "string"
-                        },
-                        "avatar": {
+                        "pantone_value": {
                             "type": "string"
                         }
                     },
                     "additionalProperties": false,
                     "required": [
                         "id",
-                        "email",
-                        "first_name",
-                        "last_name",
-                        "avatar"
+                        "name",
+                        "year",
+                        "color",
+                        "pantone_value"
                     ]
                 },
                 {
@@ -135,26 +135,26 @@
                         "id": {
                             "type": "integer"
                         },
-                        "email": {
+                        "name": {
                             "type": "string"
                         },
-                        "first_name": {
+                        "year": {
+                            "type": "integer"
+                        },
+                        "color": {
                             "type": "string"
                         },
-                        "last_name": {
-                            "type": "string"
-                        },
-                        "avatar": {
+                        "pantone_value": {
                             "type": "string"
                         }
                     },
                     "additionalProperties": false,
                     "required": [
                         "id",
-                        "email",
-                        "first_name",
-                        "last_name",
-                        "avatar"
+                        "name",
+                        "year",
+                        "color",
+                        "pantone_value"
                     ]
                 },
                 {
@@ -163,26 +163,26 @@
                         "id": {
                             "type": "integer"
                         },
-                        "email": {
+                        "name": {
                             "type": "string"
                         },
-                        "first_name": {
+                        "year": {
+                            "type": "integer"
+                        },
+                        "color": {
                             "type": "string"
                         },
-                        "last_name": {
-                            "type": "string"
-                        },
-                        "avatar": {
+                        "pantone_value": {
                             "type": "string"
                         }
                     },
                     "additionalProperties": false,
                     "required": [
                         "id",
-                        "email",
-                        "first_name",
-                        "last_name",
-                        "avatar"
+                        "name",
+                        "year",
+                        "color",
+                        "pantone_value"
                     ]
                 }
             ]

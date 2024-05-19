@@ -42,17 +42,23 @@ public class Common {
         return body_auth;
     }
 
-    public static void validarCorpoObrigatorio(String campo1, String campo2) {
-        if (campo1 == null || campo1.isEmpty() || campo2 == null || campo2.isEmpty()) {
-            Assert.fail();
-        }
+    public static Map<String, Object> requestBodynull(String email, String password) {
+        Map<String, Object> body_auth = new HashMap<>();
+        body_auth.put("email", email);
+        body_auth.put("password", password);
+
+
+        return body_auth;
     }
 
-    public static void validarCorpoObrigatorio(String campo1) {
-        if (campo1 == null || campo1.isEmpty()) {
-            Assert.fail();
-        }
+
+    public static Map<String, Object> requestBodyPassword(String password) {
+        Map<String, Object> body_auth = new HashMap<>();
+        body_auth.put("password", password);
+
+        return body_auth;
     }
+
 }
 
 

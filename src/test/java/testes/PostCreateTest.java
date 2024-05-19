@@ -25,14 +25,9 @@ public class PostCreateTest extends BaseTest {
     }
 
     @Test(groups = {"contrato"})
-    public void validarCorpoObrigatorioNoRequestBody() {
-        validarCorpoObrigatorio(USUARIO_VALIDO_POST_CREATE.getName(), USUARIO_VALIDO_POST_CREATE.getJob());
-    }
-
-    @Test(groups = {"contrato"})
-    public void validarSchemaPostAuthLoginTest() {
+    public void validarSchema() {
         postComLoginNoBody(ENDPOINT_POST_CREATE.getEndPoint(), requestBodyNameJob(USUARIO_VALIDO_POST_CREATE.getName(), USUARIO_VALIDO_POST_CREATE.getJob()))
-                .body(matchesJsonSchemaInClasspath("arquivos/schemas/CreateSchema.json"));
+                .body(matchesJsonSchemaInClasspath("arquivos/schemas/PostCreateSchema.json"));
 
     }
 

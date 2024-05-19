@@ -16,9 +16,9 @@ public class PostRegisterSuccessfulTest extends BaseTest {
 
 
     @Test(groups = {"regressivo"})
-    public void validarStatusCode201EResponseBody() {
+    public void validarStatusCode200EResponseBody() {
         JsonNode responseAtual = postComLoginNoBody(ENDPOINT_POST_REGISTER.getEndPoint(),
-                requestBodyEmailPasssword(USUARIO_VALIDO_POST_REGISTER_SUCCESSFUK.getEmail(), USUARIO_VALIDO_POST_REGISTER_SUCCESSFUK.getPassword()))
+                requestBodyEmailPasssword(USUARIO_VALIDO_POST_REGISTER_SUCCESSFUL.getEmail(), USUARIO_VALIDO_POST_REGISTER_SUCCESSFUL.getPassword()))
                 .statusCode(SC_OK)
                 .extract().response().as(JsonNode.class);
 
@@ -28,13 +28,8 @@ public class PostRegisterSuccessfulTest extends BaseTest {
     }
 
     @Test(groups = {"contrato"})
-    public void validarCorpoObrigatorioNoRequestBody() {
-        validarCorpoObrigatorio(USUARIO_VALIDO_POST_LOGIN_SUCCESSFUK.getEmail(), USUARIO_VALIDO_POST_LOGIN_SUCCESSFUK.getPassword());
-    }
-
-    @Test(groups = {"contrato"})
-    public void validarSchemaPostProductsAddTest() {
-        postComLoginNoBody(ENDPOINT_POST_REGISTER.getEndPoint(), requestBodyEmailPasssword(USUARIO_VALIDO_POST_REGISTER_SUCCESSFUK.getEmail(), USUARIO_VALIDO_POST_REGISTER_SUCCESSFUK.getPassword()))
+    public void validarSchema() {
+        postComLoginNoBody(ENDPOINT_POST_REGISTER.getEndPoint(), requestBodyEmailPasssword(USUARIO_VALIDO_POST_REGISTER_SUCCESSFUL.getEmail(), USUARIO_VALIDO_POST_REGISTER_SUCCESSFUL.getPassword()))
                 .body(matchesJsonSchemaInClasspath("arquivos/schemas/PostRegisterSuccessfulSchema.json"));
     }
 

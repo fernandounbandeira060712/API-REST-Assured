@@ -20,15 +20,15 @@ public class GetListResourceTest extends BaseTest {
 				.extract()
 				.response().body().as(JsonNode.class);
 
-		JsonNode responseEsperado = converterJsonParaJsonNode("src/test/resources/arquivos/responses/ListResource.json");
+		JsonNode responseEsperado = converterJsonParaJsonNode("src/test/resources/arquivos/responses/GetListResource.json");
 
 		assertEquals(responseAtual, responseEsperado);
 	}
 
 
 	@Test(groups = {"contrato"})
-	public void validarSchemaGetTest() {
+	public void validarSchema() {
 		getSemAutenticacao(ENDPOINT_GET_LIST_RESOURCE.getEndPoint())
-				.body(matchesJsonSchemaInClasspath("arquivos/schemas/ListResourceSchema.json"));
+				.body(matchesJsonSchemaInClasspath("arquivos/schemas/GetListResourceSchema.json"));
 	}
 }
