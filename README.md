@@ -99,15 +99,12 @@ Antes de executar o projeto, você precisa ter instalado:
 ## ▶️ Como Executar
 
 Clone o repositório:
-```bash
 git clone https://github.com/seu-usuario/API-REST-Assured.git
 
 Acesse a pasta do projeto:
-```bash
 cd API-REST-Assured
 
 Execute os testes:
-```bash
 mvn clean test
 
 ---
