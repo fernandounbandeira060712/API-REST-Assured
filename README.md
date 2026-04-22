@@ -100,43 +100,7 @@ Antes de executar o projeto, você precisa ter instalado:
 
 Clone o repositório:
 
+
+
 ```bash
 git clone https://github.com/seu-usuario/API-REST-Assured.git
-
-Acesse a pasta do projeto:
-
-cd API-REST-Assured
-
-Execute os testes:
-
-mvn clean test
-
-## 🔄 Integração com CI/CD
-
-Este projeto possui suporte para execução automatizada via **Jenkins**, utilizando um `Jenkinsfile` com as seguintes funcionalidades:
-
-- ⏰ Execução agendada (cron)
-- 🔁 Rerun automático de testes falhos
-- 📊 Geração de relatório com Allure
-- 📦 Empacotamento de evidências (logs, screenshots e resultados)
-- 📁 Arquivamento de artefatos
-- 📬 Notificação de sucesso/falha
-- 🚀 Criação automática de Pull Request
-
----
-
-## 📊 Relatórios
-
-Os testes podem gerar relatórios utilizando:
-
-- 📈 Allure Report *(quando configurado no ambiente CI)*
-
----
-
-## 💡 Boas Práticas Aplicadas
-
-- Organização de testes por endpoint
-- Separação de responsabilidades
-- Validação de contrato (JSON Schema)
-- Parametrização de execução
-- Preparação para ambientes de CI/CD
