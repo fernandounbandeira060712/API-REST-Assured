@@ -1,49 +1,108 @@
-# Testes Automatizados com RestAssured em Java para reqres.in
+🚀 API-REST-Assured
+🧪 Testes Automatizados de API com RestAssured + Java
 
-Este repositório contém testes automatizados desenvolvidos em Java utilizando a biblioteca RestAssured para testar as APIs disponíveis em [reqres.in](https://reqres.in/).
+Este projeto contém uma suíte de testes automatizados de API desenvolvida em Java, utilizando a biblioteca RestAssured para validação dos endpoints da API pública:
 
-## Métodos Testados
+🔗 https://reqres.in
 
-### GET /api/users/{id}
-Este método é utilizado para obter detalhes de um usuário específico pelo seu ID.
+🎯 Objetivo
 
-#### Teste:
-- Testa se o status de resposta é 200 (OK).
-- Verifica se o schema da resposta está de acordo com o esperado para um usuário.
+Demonstrar boas práticas de automação de testes de API, incluindo:
 
-### POST /api/users
-Este método é utilizado para criar um novo usuário.
+✔ Validação de status codes
+✔ Validação de JSON Schema
+✔ Estrutura organizada de testes
+✔ Uso de Maven para build e execução
+✔ Preparação para integração com CI/CD (Jenkins)
+🛠️ Tecnologias Utilizadas
+☕ Java
+🔗 RestAssured
+📦 Maven
+🧪 TestNG / JUnit (ajuste conforme seu projeto)
+📄 JSON Schema Validator
+🔄 Jenkins (CI/CD)
+📌 Endpoints Testados
+🔍 GET /api/users/{id}
 
-#### Teste:
-- Testa se o status de resposta é 201 (Created).
-- Verifica se o schema da resposta está de acordo com o esperado para a criação de um usuário.
+Retorna os dados de um usuário específico.
 
-### PUT /api/users/{id}
-Este método é utilizado para atualizar os detalhes de um usuário existente pelo seu ID.
+Validações realizadas:
 
-#### Teste:
-- Testa se o status de resposta é 200 (OK).
-- Verifica se o schema da resposta está de acordo com o esperado para a atualização de um usuário.
+Status code 200 (OK)
+Estrutura da resposta via JSON Schema
+Dados obrigatórios do usuário
+➕ POST /api/users
 
-### DELETE /api/users/{id}
-Este método é utilizado para excluir um usuário pelo seu ID.
+Cria um novo usuário.
 
-#### Teste:
-- Testa se o status de resposta é 204 (No Content), indicando que o usuário foi excluído com sucesso.
+Validações realizadas:
 
-## Validação de Schema
-Para assegurar a integridade dos dados recebidos das APIs, todos os testes realizam a validação do schema da resposta. Isso garante que os dados estejam formatados corretamente de acordo com o modelo especificado.
+Status code 201 (Created)
+Estrutura da resposta
+Campos retornados após criação
+🔄 PUT /api/users/{id}
 
-## Pré-requisitos
-- Java JDK instalado
-- Maven instalado
+Atualiza os dados de um usuário.
 
-## Como Executar os Testes
-1. Clone o repositório para sua máquina local.
-2. Navegue até o diretório raiz do projeto.
-3. Execute o comando `mvn test` para executar todos os testes.
-4. Os resultados dos testes serão exibidos no console.
+Validações realizadas:
 
-## Observações
-- Certifique-se de que sua conexão com a internet está funcionando corretamente para acessar a API reqres.in.
-- Os testes foram desenvolvidos e executados utilizando o IntelliJ IDEA, mas também podem ser executados em outros ambientes de desenvolvimento Java."# API-REST-Assured" 
+Status code 200 (OK)
+Validação de payload atualizado
+Estrutura da resposta
+❌ DELETE /api/users/{id}
+
+Remove um usuário.
+
+Validações realizadas:
+
+Status code 204 (No Content)
+Garantia de exclusão sem retorno de corpo
+🧪 Validação de Contrato (JSON Schema)
+
+Os testes utilizam validação de JSON Schema para garantir:
+
+Integridade da estrutura da resposta
+Tipagem correta dos campos
+Conformidade com o contrato da API
+⚙️ Pré-requisitos
+
+Antes de executar o projeto, você precisa ter instalado:
+
+Java JDK 8+
+Maven
+Acesso à internet
+▶️ Como Executar
+
+Clone o repositório:
+
+git clone https://github.com/seu-usuario/API-REST-Assured.git
+
+Acesse a pasta do projeto:
+
+cd API-REST-Assured
+
+Execute os testes:
+
+mvn clean test
+🔄 Integração com CI/CD
+
+Este projeto possui suporte para execução automatizada via Jenkins, utilizando um Jenkinsfile com:
+
+⏰ Execução agendada (cron)
+🔁 Rerun automático de testes falhos
+📊 Geração de relatório com Allure
+📦 Empacotamento de evidências
+📁 Arquivamento de artefatos
+📬 Notificação de sucesso/falha
+🚀 Criação automática de Pull Request
+📊 Relatórios
+
+Os testes podem gerar relatórios utilizando:
+
+📈 Allure Report (quando configurado no ambiente CI)
+💡 Boas Práticas Aplicadas
+Organização de testes por endpoint
+Separação de responsabilidades
+Validação de contrato (schema)
+Parametrização de execução
+Preparação para ambientes de CI/CD
